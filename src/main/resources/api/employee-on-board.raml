@@ -1,0 +1,124 @@
+#%RAML 1.0
+version: v1
+title: employee-on-board
+
+
+/getemployeesdetails:
+  get:
+    description: Retrieve all Employee Details
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "Employee": [
+                  {
+                    "EMP_Sno" : "1",
+                    "EMP_FirstName" : "Pakala Venkat",
+                    "EMP_LastName" : "Reddy",
+                    "EMP_ID" : "E144",
+                    "EMP_Designation" : "MuleSoft Developer",
+                    "EMP_TeamLead" : "Salma Sulthana",
+                    "EMP_Manager": "Kiran Padam"
+
+                  },
+                  {
+                     "EMP_Sno" : "2",
+                    "EMP_FirstName" : "Sateesh",
+                    "EMP_LastName" : "Reddy",
+                    "EMP_ID" : "E151",
+                    "EMP_Designation" : "MuleSoft Developer",
+                    "EMP_TeamLead" : "Salma Sulthana",
+                    "EMP_Manager": "Kiran Padam"
+                  }
+                ]
+              }
+
+/insertemployee:
+  post:
+    body:
+      application/json:
+        example: |
+          {
+            "EMP_Sno" : "1",
+            "EMP_FirstName" : "Pakala Venkat",
+            "EMP_LastName" : "Reddy",
+            "EMP_ID" : "E144",
+            "EMP_Designation" : "MuleSoft Developer",
+            "EMP_TeamLead" : "Salma Sulthana",
+            "EMP_Manager": "Kiran Padam"
+          }
+
+    responses:
+      201:
+        body:
+          application/json:
+            example: |
+              {
+                "message":"The Employee details has been Inserted Successfully"
+              }
+
+/getemployeedetails/{EMP_ID}:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: |
+              {
+                "EMP_Sno" : "1",
+                "EMP_FirstName" : "Pakala Venkat",
+                "EMP_LastName" : "Reddy",
+                "EMP_ID" : "E144",
+                "EMP_Designation" : "MuleSoft Developer",
+                "EMP_TeamLead" : "Salma Sulthana",
+                "EMP_Manager": "Kiran Padam"
+              }
+      
+/deleteEmployee/{EMP_ID}:
+  delete:
+    responses:
+      200:
+        description: | 
+          The Employee has been Successfully Removed
+        body:
+          application/json:
+            example: |
+              {
+                "messsage":"The Employee details has been removed Successfully"
+              }
+
+      404:
+        description: |
+          Unable to find record with that identifier
+
+/updateemployee:
+  put:
+    body:
+      application/json:
+        example:
+          {
+            "EMP_Sno" : "1",
+            "EMP_FirstName" : "Pakala Venkat",
+            "EMP_LastName" : "Reddy",
+            "EMP_ID" : "E144",
+            "EMP_Designation" : "MuleSoft Developer",
+            "EMP_TeamLead" : "Salma Sulthana",
+            "EMP_Manager": "Kiran Padam"
+          }
+    responses:
+      200:
+        description: |
+          The record has been successfully updated
+        body:
+          application/json:
+            example: |
+              {
+                "message": "The employee details has been updated successfully"
+              }
+
+      404:
+        description: |
+          Unable to find the employee details with that EID
+        
