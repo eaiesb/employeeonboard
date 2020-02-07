@@ -28,12 +28,12 @@
                                 <armDeployment>
                                     <muleVersion>4.2.2</muleVersion>
                                     <uri>https://anypoint.mulesoft.com</uri>
-                                    <target>mule-dev-env</target>
+                                    <target>mule-stage-env</target>
                                     <targetType>server</targetType>
                                     <username>EaiesbFeb20</username>
                                     <password>Eaiesb@123</password>
                                     <applicationName>employeeonboard</applicationName>
-                                    <environment>DEV</environment>
+                                    <environment>STAGE</environment>
                                 </armDeployment>
 		                </configuration>
 			</plugin>
