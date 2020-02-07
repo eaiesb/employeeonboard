@@ -25,19 +25,16 @@
 						<version>${mule.maven.plugin.version}</version>
 						<extensions>true</extensions>
 						<configuration>
-						<cloudHubDeployment>
-										   <uri>https://anypoint.mulesoft.com</uri>
-										   <muleVersion>4.2.2</muleVersion>
-										   <username>EaiesbFeb20</username>
-										   <password>Eaiesb@123</password>
-										   <applicationName>employeeonboard-mule4</applicationName>
-										   <environment>Prod</environment>
-										   
-										   <workerType>MICRO</workerType> 
-										   <objectStoreV2>true</objectStoreV2>
-										   
-		   </cloudHubDeployment>
-						<classifier>mule-application</classifier>
+                                <armDeployment>
+                                    <muleVersion>4.2.2</muleVersion>
+                                    <uri>https://anypoint.mulesoft.com</uri>
+                                    <target>mule-dev-env</target>
+                                    <targetType>server</targetType>
+                                    <username>EaiesbFeb20</username>
+                                    <password>Eaiesb@123</password>
+                                    <applicationName>employeeonboard</applicationName>
+                                    <environment>DEV</environment>
+                                </armDeployment>
 		                </configuration>
 			</plugin>
 			<plugin>
