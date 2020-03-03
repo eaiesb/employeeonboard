@@ -32,7 +32,7 @@
                                     <targetType>server</targetType>
                                     <username>EaiesbFeb20</username>
                                     <password>Eaiesb@123</password>
-                                    <applicationName>employeeonboard</applicationName>
+                                    <applicationName>employeeonboardv1</applicationName>
                                     <environment>DEV</environment>
                                 </armDeployment>
 		                </configuration>
